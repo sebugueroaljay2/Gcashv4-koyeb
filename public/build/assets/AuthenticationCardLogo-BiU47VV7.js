@@ -1,1 +1,0 @@
-import{e as t,o as a,a as s,h as o}from"./app-D5D_MQrt.js";const r={href:"#",class:"flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"},m={__name:"AuthenticationCardLogo",setup(c){return(n,e)=>(a(),t("a",r,e[0]||(e[0]=[s("img",{src:"/gcash.png",class:"h-12 mr-2",alt:" Logo"},null,-1),o(" Gcash ",-1)])))}};export{m as _};
