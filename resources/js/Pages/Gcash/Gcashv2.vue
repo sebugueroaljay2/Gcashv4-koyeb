@@ -35,58 +35,6 @@ const currentPage = ref(1);
 const selectedTypes = ref([]) // ⬅️ for checkbox filters
 
 
-// const fetchTransactions = async (page = 1) => {
-//     const response = await axios.get(`/api/transactions?page=${page}`);
-//     transactions.value = response.data;
-// };
-
-// const fetchTransactions = async (page = 1) => {
-//     isLoading.value = true
-//     try {
-//         const response = await axios.get('/api/transactions', {
-//             params: {
-//                 page,
-//                 search: search.value,
-//                 transaction_types: selectedTypes.value
-//             }
-//         })
-//         transactions.value = response.data
-//         currentPage.value = response.data.current_page
-        
-//     } catch (error) {
-//         console.error(error)
-//     } finally {
-//         isLoading.value = false
-//     }
-// }
-
-// const fetchTransactions = async (page = 1) => {
-//     isLoading.value = true;
-//     try {
-//         const response = await axios.get('/api/transactions', {
-//             params: {
-//                 page,
-//                 search: search.value,
-//                 transaction_types: selectedTypes.value,
-//             }
-//         });
-
-//         // Assign API response to Vue refs
-//         transactions.value = response.data;
-//         currentPage.value = response.data.current_page;
-//         totalPages.value = response.data.last_page;
-
-//         // Optional income stats
-//         dailyIncome.value = response.data.daily_income;
-//         weeklyIncome.value = response.data.weekly_income;
-//         monthlyIncome.value = response.data.monthly_income;
-//     } catch (error) {
-//         console.error("Error fetching transactions:", error);
-//     } finally {
-//         isLoading.value = false;
-//     }
-// };
-
 const totalPages = ref(1)
 
 const fetchTransactions = async (page = 1) => {
@@ -651,7 +599,7 @@ onMounted(() => {
                                         <select id="charge" v-model="form.charge_type_id"
                                             class="mx-auto py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                             <option v-for="selection in props.charge_types" :key="selection.id"
-                                                :value="selection.id">{{ selection.charge }}</option>
+                                                :value="selection.id">{{ selection.charges }}</option>
                                         </select>
                                     </div>
                                     <div class="w-full">
